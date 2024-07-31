@@ -14,8 +14,10 @@ dotenv.config({})
 app.use(express.json());
 app.use(urlencoded({ extended: true }));
 app.use(cookieParser());
-
-app.use(cors());
+const corsOptions = {
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 //api's
 app.use("/api/v1/user", userRoute)
