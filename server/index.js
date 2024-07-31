@@ -12,7 +12,9 @@ const app = express();
 dotenv.config({})
 
 app.use(express.json());
-app.use(urlencoded({ extended: true }));
+app.use(urlencoded({ 
+  origin:"https://job-portal-ufi4.onrender.com",
+  extended: true }));
 app.use(cookieParser());
 const corsOptions = {
   credentials: true,
