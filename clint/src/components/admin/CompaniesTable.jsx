@@ -33,7 +33,7 @@ const CompaniesTable = () => {
           .includes(searchcompanybytext.toLowerCase());
       });
     setfiltercompany(filteredcompany);
-  }, [companies, searchcompanybytext]);
+  }, []);
 
   return (
     <div>
@@ -48,11 +48,11 @@ const CompaniesTable = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {filtercompany?.length <= 0 ? (
+          {companies?.length <= 0 ? (
             <TableRow> <span className="text-lg font-semibold">You haven't register any company yet.</span></TableRow>
           ) : (
             
-            filtercompany?.map((company, index) => (
+            companies?.map((company, index) => (
               <TableRow key={index}>
                 <TableCell>
                   <Avatar>
