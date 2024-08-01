@@ -32,7 +32,7 @@ const JobsTable = () => {
               .includes(searchjobbytext.toLowerCase()) || job?.company?.name?.toLowerCase().includes(searchjobbytext.toLowerCase());
           });
           setfilterjob(filteredjob);
-      }, [alladminjobs, searchjobbytext]);
+      }, []);
     
       return (
         <div>
@@ -47,12 +47,12 @@ const JobsTable = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {filterjob?.length <= 0 ? (
+              {alladminjobs?.length <= 0 ? (
                  <TableRow><span className="text-lg font-semibold">Match not found</span></TableRow>
                
               ) : (
                 
-                filterjob?.map((job, index) => (
+                alladminjobs?.map((job, index) => (
                   <TableRow key={index}>
                     {/* <TableCell>
                       <Avatar>
